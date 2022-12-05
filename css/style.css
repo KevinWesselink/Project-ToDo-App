@@ -1,0 +1,49 @@
+body {
+    padding: 10px;
+}
+
+.appHeader {
+    background-color: #597eaa;
+    padding: 5px;
+    border: 3px solid black;
+    justify-content: space-between;
+}
+
+.headerText {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.headerButtonDiv {
+    float: right;
+}
+
+.newTaskButton {
+    background-color: #069b14;
+    color: #fafbf8;
+    border: 2px solid black;
+}
+
+.newTaskButton:hover {
+    background-color: #058a13;
+    color: #fafbf8;
+    border: 2px solid black;
+}
+
+.myTasksDiv {
+    padding-left: 3px;
+    font-weight: bold;
+}
+
+.taskHeader {
+    border: 1px solid black;
+    padding: 10px 5px;
+}
+
+.taskList {
+
+}
+
+.footer {
+
+}
