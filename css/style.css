@@ -6,16 +6,17 @@ body {
     background-color: #597eaa;
     padding: 5px;
     border: 3px solid black;
-    justify-content: space-between;
 }
 
 .headerText {
-    font-size: 25px;
+    font-size: 50px;
     font-weight: bold;
 }
 
 .headerButtonDiv {
     float: right;
+    margin-top: -37px;
+    margin-right: 19px;
 }
 
 .newTaskButton {
@@ -31,19 +32,19 @@ body {
 }
 
 .myTasksDiv {
-    padding-left: 3px;
+    padding-left: 15px;
     font-weight: bold;
-}
-
-.taskHeader {
-    border: 1px solid black;
-    padding: 10px 5px;
+    font-size: 30px;
 }
 
 .taskList {
 
 }
 
-.footer {
+th {
+    border: 3px solid black;
+}
 
+.tableHead {
+    width: 100%;
 }
