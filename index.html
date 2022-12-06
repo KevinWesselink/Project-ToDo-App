@@ -18,7 +18,17 @@
         ToDo, just another taskapp
     </div>
     <div class="headerButtonDiv">
-        <button class="newTaskButton" onclick="addTask()">+ Nieuwe taak</button>
+        <button class="newTaskButton" data-modal-target="#modal">+ Nieuwe taak</button>
+        <div class="modal" id="modal">
+            <div class="modalHeader">
+                <div class="title">Nieuwe taak aanmaken</div>
+                <button data-close-button class="closeButton">&times;</button>
+            </div>
+            <div class="modalBody">
+                Input hier plaatsen
+            </div>
+        </div>
+        <div id="overlay"></div>
     </div>
 </div>
 
@@ -37,15 +47,8 @@
             <th>Afgerond op</th>
             <th>Kladblok</th>
         </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
+        <!--For loop plaatsen, die door alle taken in de takenlijst loopt (Array?) en hier onder plaatst.-->
+        <!--Eerst degene die nog open staan, daarna de voltooide.-->
     </table>
 </div>
 
