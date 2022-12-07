@@ -10,7 +10,7 @@ openModalButtons.forEach(button => {
 })
 
 overlay.addEventListener('click', () => {
-    const modals = document.querySelectorAll('.modal.active');
+    const modals = document.querySelectorAll('.modalActive');
     modals.forEach(modal => {
         closeModal(modal);
     })
