@@ -27,7 +27,7 @@ body {
 
 .newTaskButton:hover {
     background-color: #058a13;
-    color: #fafbf8;
+    color: white;
     border: 2px solid black;
 }
 
@@ -73,6 +73,7 @@ th {
 
 .modalHeader {
     padding: 10px 15px;
+    background-color: #597eaa;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,4 +113,28 @@ th {
 #overlay.active {
     opacity: 1;
     pointer-events: all;
+}
+
+.submit {
+    background-color: #069b14;
+    color: #fafbf8;
+    border: 1px solid black;
+}
+
+.submit:hover {
+    background-color: #058a13;
+    color: white;
+    border: 1px solid black;
+}
+
+.cancel {
+    background-color: #ad0404;
+    color: white;
+    border: 1px solid black;
+}
+
+.cancel:hover {
+    background-color: #940202;
+    color: white;
+    border: 1px solid black;
 }
