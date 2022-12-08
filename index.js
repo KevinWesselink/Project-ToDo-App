@@ -34,3 +34,11 @@ function closeModal(modal) {
     modal.classList.remove('active');
     overlay.classList.remove('active');
 }
+
+function submit() {
+
+}
+
+function cancel(modal) {
+
+}
