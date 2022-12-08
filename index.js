@@ -36,7 +36,11 @@ function closeModal(modal) {
 }
 
 function submit() {
+    let title = document.getElementById('title').value;
+    let description = document.getElementById('description').value;
+    let location = document.getElementById('location').value;
 
+    query('INSERT INTO todoapps VALUES (title, description, location)');
 }
 
 function cancel(modal) {
