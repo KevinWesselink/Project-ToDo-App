@@ -6,7 +6,6 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css?=v081220220848">
-    <?php include "db.php"; ?>
     <title>To Do App</title>
 </head>
 <body>
@@ -23,24 +22,23 @@
                 <button data-close-button class="closeButton">&times;</button>
             </div>
             <div class="modalBody">
-                <form method="post">
+                <form action="db.php" method="post">
                     <div>
                         <label for="title">Titel</label>
-                        <input type="text" id="title" name="createTask" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
+                        <input type="text" id="title" name="title" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
                     </div>
                     <div>
                         <label for="description">Omschrijving</label>
-                        <input type="text" id="description" name="createTask" placeholder="Omschrijving:" value="" minlength="0" maxlength="255" required>
+                        <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" minlength="0" maxlength="255" required>
                     </div>
                     <div>
                         <label for="location">Locatie</label>
-                        <input type="text" id="location" name="createTask" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
+                        <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
                     </div>
+
+                    <input type="submit" name="Opslaan" value="Opslaan" class="submit">
+                    <button data-close-button class="cancel">Annuleren</button>
                 </form>
-
-                <button data-close-button class="submit" onclick="submit()">Opslaan</button>
-                <button data-close-button class="cancel" >Annuleren</button>
-
             </div>
         </div>
         <div id="overlay"></div>
