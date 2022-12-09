@@ -33,9 +33,13 @@ $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
 //Toon de data uit de array
 foreach($result as $row) {
-    echo $row['id'];
-    echo $row['title'];
-    echo $row['description'];
-    echo $row['location'];
+    echo "<table>
+            <tr>
+                <td>".$row['id']."</td>
+                <td>".$row['title']."</td>
+                <td>".$row['description']."</td>
+                <td>".$row['location']."</td>
+            </tr>
+        </table>";
 }
 ?>
