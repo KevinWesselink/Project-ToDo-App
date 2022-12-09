@@ -37,15 +37,15 @@ body {
     font-size: 30px;
 }
 
-.taskList {
-
-}
-
 th {
     border: 3px solid black;
 }
 
 .tableHead {
+    width: 100%;
+}
+
+.tableBody {
     width: 100%;
 }
 
