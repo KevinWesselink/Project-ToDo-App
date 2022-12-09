@@ -49,7 +49,7 @@
     Mijn taken
 </div>
 
-<div class="taskList">
+<div>
     <table class="tableHead">
         <tr>
             <th>#</th>
