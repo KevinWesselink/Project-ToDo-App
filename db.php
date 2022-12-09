@@ -31,9 +31,11 @@ $sth->execute();
 //Geeft data weer in een associatieve array (data wordt niet opgehaald via indexes, maar via namen)
 $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
+$createdOn = date("Y-m-d H:i:s");
+
 //Toon de data uit de array
 foreach($result as $row) {
-    echo "<table>
+    echo "<table class='tableBody'>
             <tr>
                 <td>".$row['id']."</td>
                 <td>".$row['title']."</td>
