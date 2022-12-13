@@ -37,7 +37,7 @@ body {
     font-size: 30px;
 }
 
-th {
+.tableBorder {
     border: 3px solid black;
 }
 
@@ -45,9 +45,9 @@ th {
     width: 100%;
 }
 
-.tableBody {
-    width: 100%;
-}
+/*.tableBody {*/
+/*    width: 100%;*/
+/*}*/
 
 *, *::after, *::before {
     box-sizing: border-box;
@@ -137,5 +137,9 @@ th {
 .cancel:hover {
     background-color: #940202;
     color: white;
+    border: 1px solid black;
+}
+
+td {
     border: 1px solid black;
 }
