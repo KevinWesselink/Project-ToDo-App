@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css?=v081220220848">
+    <link rel="stylesheet" href="css/style.css?=v131220220915">
     <title>To Do App</title>
 </head>
 <body>
@@ -49,7 +49,7 @@
     Mijn taken
 </div>
 
-<div>
+<div class="tableBorder">
     <table class="tableHead">
         <tr>
             <th>#</th>
