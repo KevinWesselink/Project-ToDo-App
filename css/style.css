@@ -45,10 +45,6 @@ body {
     width: 100%;
 }
 
-/*.tableBody {*/
-/*    width: 100%;*/
-/*}*/
-
 *, *::after, *::before {
     box-sizing: border-box;
 }
@@ -138,6 +134,10 @@ body {
     background-color: #940202;
     color: white;
     border: 1px solid black;
+}
+
+th {
+    margin-bottom: 1px;
 }
 
 td {
