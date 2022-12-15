@@ -20,7 +20,7 @@ if (isset($_POST['Opslaan'])) {
         $sth->bindParam(':location', $location);
         $sth->execute();
     } else {
-        echo "Error: duplicate entry";
+        echo "Error: Deze titel of omschrijving bestaat al.";
     }
 }
 
