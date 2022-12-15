@@ -33,4 +33,7 @@ function closeModal(modal) {
     if (modal == null) return
     modal.classList.remove('active');
     overlay.classList.remove('active');
+    document.getElementById('title').value = '';
+    document.getElementById('description').value = '';
+    document.getElementById('location').value = '';
 }
