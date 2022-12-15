@@ -1,3 +1,7 @@
+<?php
+include "db.php";
+include "functions.php"
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,8 +13,6 @@
     <title>To Do App</title>
 </head>
 <body>
-<?php include "db.php"; ?>
-
 <div class="appHeader">
     <div class="headerText">
         ToDo, just another taskapp
@@ -23,7 +25,7 @@
                 <button data-close-button class="closeButton">&times;</button>
             </div>
             <div class="modalBody">
-                <form name="insertData" action="db.php" method="post">
+                <form name="insertData" method="post">
                     <div>
                         <label for="title">Titel</label>
                         <input type="text" id="title" name="title" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
@@ -61,12 +63,13 @@
             <th>Afgerond op</th>
             <th>Kladblok</th>
         </tr>
+        <?php getTodo(); ?>
         <!--For loop plaatsen, die door alle taken in de takenlijst loopt (Array?) en hier onder plaatst.-->
         <!--Eerst degene die nog open staan, daarna de voltooide.-->
     </table>
 </div>
-
 </body>
+
 
 <script src="index.js"></script>
 
