@@ -52,9 +52,9 @@ include "functions.php"
     Mijn taken
 </div>
 
-<div class="tableBorder">
+<!--<div class="tableBorder">!-->
     <table class="tableHead">
-        <tr>
+        <tr class="tableBorder">
             <th>#</th>
             <th>Titel</th>
             <th>Omschrijving</th>
@@ -67,7 +67,7 @@ include "functions.php"
         <!--For loop plaatsen, die door alle taken in de takenlijst loopt (Array?) en hier onder plaatst.-->
         <!--Eerst degene die nog open staan, daarna de voltooide.-->
     </table>
-</div>
+<!--</div>!-->
 </body>
 
 
