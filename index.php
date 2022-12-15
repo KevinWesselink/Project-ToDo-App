@@ -9,6 +9,7 @@
     <title>To Do App</title>
 </head>
 <body>
+<?php include "db.php"; ?>
 
 <div class="appHeader">
     <div class="headerText">
@@ -22,7 +23,7 @@
                 <button data-close-button class="closeButton">&times;</button>
             </div>
             <div class="modalBody">
-                <form action="db.php" method="post">
+                <form name="insertData" action="db.php" method="post">
                     <div>
                         <label for="title">Titel</label>
                         <input type="text" id="title" name="title" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
