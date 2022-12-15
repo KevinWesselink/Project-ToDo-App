@@ -7,13 +7,13 @@ if (isset($_POST['Opslaan'])) {
     echo "Data array updated \n";
 
 //Check of de titel en omschrijving al bestaan
-    $resultNameDupeCheck = $conn->query("SELECT title FROM todoapp WHERE title = '$title'");
-    $resultMsgDupeCheck = $conn->query("SELECT description FROM todoapp WHERE description = '$description'");
+    $resultTitleDupeCheck = $conn->query("SELECT title FROM todoapp WHERE title = '$title'");
+    $resultDescriptionDupeCheck = $conn->query("SELECT description FROM todoapp WHERE description = '$description'");
 
 //    echo $resultNameDupeCheck;
 //    echo $resultMsgDupeCheck;
 
-    if ($resultNameDupeCheck->rowCount() == 0 && $resultMsgDupeCheck->rowCount() == 0) {
+    if ($resultTitleDupeCheck->rowCount() == 0 && $resultDescriptionDupeCheck->rowCount() == 0) {
 //Data in de database stoppen
         $query = "insert into todoapp (`title`, `description`, `location`) values ($title, $description, $location)";
 //echo $query;
