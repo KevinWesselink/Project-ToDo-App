@@ -6,14 +6,14 @@ if (isset($_POST['Opslaan'])) {
     $location = $_POST["location"];
     echo "Data array updated \n";
 
-//Check of de titel en omschrijving al bestaan
+    //Check of de titel en omschrijving al bestaan
     $resultTitleDupeCheck = $conn->query("SELECT title FROM todoapp WHERE title = '$title'");
     $resultDescriptionDupeCheck = $conn->query("SELECT description FROM todoapp WHERE description = '$description'");
 
     if ($resultTitleDupeCheck->rowCount() == 0 && $resultDescriptionDupeCheck->rowCount() == 0) {
-//Data in de database stoppen
+        //Data in de database stoppen
         $query = "insert into todoapp (`title`, `description`, `location`) values (:title, :description, :location)";
-//echo $query;
+
         $sth = $conn->prepare($query);
         $sth->bindParam(':title', $title);
         $sth->bindParam(':description', $description);
