@@ -37,3 +37,13 @@ function closeModal(modal) {
     document.getElementById('description').value = '';
     document.getElementById('location').value = '';
 }
+
+function modal(num){
+    if (num === 1){
+        openModal(document.getElementById('modal1'));
+    } else if (num === 2){
+        openModal(document.getElementById('modal2'));
+    } else if (num === 3){
+        openModal(document.getElementById('modal3'));
+    }
+}
