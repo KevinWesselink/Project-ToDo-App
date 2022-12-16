@@ -34,70 +34,16 @@ function completeTask() {
     global $conn;
 }
 
-function deleteTask() {
-    //Eerst deze functie afmaken
+if (isset($_POST['Verwijder taak'])) {
     global $conn;
-    $query = "DELETE FROM todoapp WHERE id = :id";
+    $title = $_POST['title'];
+    $description = $_POST["description"];
+    $location = $_POST["location"];
+
+    $query = "DELETE FROM todoapp WHERE title = '$title' AND description = '$description' AND location = '$location'";
     $sth = $conn->prepare($query);
-    $sth->bindParam(':id', $id);
     $sth->execute();
 }
-
-
-/*
-function modal(value){
-
-    if (value == 'edit') {
-        ?>
-        <button data-modal-target="#modal" class="newTaskButton">+ Nieuwe taak</button>
-        <div id="modal" class="modal">
-            <div class="modalHeader">
-                <div class="title">Taak aanpassen</div>
-                <button data-close-button class="closeButton">&times;</button>
-            </div>
-            <div class="modalBody">
-                <h2>Pas de taak aan</h2>
-                <button class="submit" onclick="editTask()">Aanpassen</button>
-                <button data-close-button class="cancel">Annuleer</button>
-            </div>
-        </div>
-        <div id="overlay"></div>
-        <?php
-    } else if (value == 'delete') {
-        ?>
-        <button data-modal-target="#modal" class="newTaskButton">+ Nieuwe taak</button>
-        <div id="modal" class="modal">
-            <div class="modalHeader">
-                <div class="title">Taak verwijderen</div>
-                <button data-close-button class="closeButton">&times;</button>
-            </div>
-            <div class="modalBody">
-                <h2>Weet je zeker dat je de taak wil verwijderen?</h2>
-                <button class="submit" onclick="deleteTask()">Ik weet het zeker</button>
-                <button data-close-button class="cancel">Annuleer</button>
-            </div>
-        </div>
-        <div id="overlay"></div>
-        <?php
-    } else  {
-        ?>
-        <button data-modal-target="#modal" class="newTaskButton">+ Nieuwe taak</button>
-        <div id="modal" class="modal">
-            <div class="modalHeader">
-                <div class="title">Taak afronden</div>
-                <button data-close-button class="closeButton">&times;</button>
-            </div>
-            <div class="modalBody">
-                <h2>Weet je zeker dat je de taak wil afronden?</h2>
-                <button class="submit" onclick="completeTask()">Ik weet het zeker</button>
-                <button data-close-button class="cancel">Annuleer</button>
-            </div>
-        </div>
-        <div id="overlay"></div>
-        <?php
-    }
-}
-*/
 
 function getTodo() {
     global $conn;
