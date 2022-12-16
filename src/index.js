@@ -40,10 +40,15 @@ function closeModal(modal) {
 
 function modal(num){
     if (num === 1){
-        openModal(document.getElementById('modal1'));
+        //Taak wijzigen
+        alert('Functie uitgeschakeld.')
+        // openModal(document.getElementById('modal1'));
     } else if (num === 2){
-        openModal(document.getElementById('modal2'));
+        //Taak afronden
+        alert('Functie uitgeschakeld.')
+        // openModal(document.getElementById('modal2'));
     } else if (num === 3){
+        //Taak verwijderen
         openModal(document.getElementById('modal3'));
     }
 }
