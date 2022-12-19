@@ -40,7 +40,7 @@ include "../src/functions.php";
                         <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
                     </div>
 
-                    <input type="submit" name="Opslaan" value="Opslaan" class="submit">
+                    <input type="submit" name="insertTask" value="Opslaan" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
                 </form>
             </div>
@@ -68,7 +68,7 @@ include "../src/functions.php";
                         <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
                     </div>
 
-                    <input type="submit" name="Opslaan" value="Opslaan" class="submit">
+                    <input type="submit" name="editTask" value="Taak aanpassen" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
                 </form>
             </div>
@@ -96,7 +96,7 @@ include "../src/functions.php";
                         <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
                     </div>
 
-                    <input type="submit" name="Opslaan" value="Opslaan" class="submit">
+                    <input type="submit" name="completeTask" value="Taak afronden" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
                 </form>
             </div>
@@ -113,7 +113,7 @@ include "../src/functions.php";
                 <form name="deleteData" method="post"></form>
                     <h3>Weet je zeker dat je deze taak wil verwijderen?</h3>
 
-                    <input type="submit" name="Opslaan" value="Verwijder taak" class="submit">
+                    <input type="submit" name="deleteTask" value="Taak verwijderen" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
                 </form>
             </div>
@@ -136,7 +136,6 @@ include "../src/functions.php";
         <th>Acties</th>
     </tr>
     <?php getTodo(); ?>
-    <!--For loop plaatsen, die door alle taken in de takenlijst loopt (Array?) en hier onder plaatst.-->
     <!--Eerst degene die nog open staan, daarna de voltooide.-->
 </table>
 </body>
