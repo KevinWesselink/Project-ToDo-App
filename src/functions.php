@@ -1,6 +1,6 @@
 <?php
 
-if (isset($_POST['Opslaan'])) {
+if (isset($_POST['insertTask'])) {
     $title = $_POST['title'];
     $description = $_POST["description"];
     $location = $_POST["location"];
@@ -24,17 +24,15 @@ if (isset($_POST['Opslaan'])) {
     }
 }
 
-function editTask() {
-    //Functie pas aanmaken als deleteTask() werkt
-    global $conn;
+if (isset($_POST['editTask'])) {
+
 }
 
-function completeTask() {
-    //Functie pas aanmaken als editTask() werkt
-    global $conn;
+if (isset($_POST['completeTask'])) {
+
 }
 
-if (isset($_POST['Verwijder taak'])) {
+if (isset($_POST['deleteTask'])) {
     global $conn;
     $title = $_POST['title'];
     $description = $_POST["description"];
