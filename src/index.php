@@ -110,12 +110,14 @@ include "../src/functions.php";
                 <button data-close-button class="closeButton">&times;</button>
             </div>
             <div class="modalBody">
-                <form name="deleteData" method="post"></form>
+                <form name="deleteData" method="post" action="functions.php">
                     <h3>Weet je zeker dat je deze taak wil verwijderen?</h3>
 
                     <p>Titel: <span id="modal_title"></span> </p>
                     <p>Omschrijving: <span id="modal_description"></span></p>
                     <p>Locatie: <span id="modal_location"></span></p>
+
+                    <input type="hidden" name="modal_taskId" id="modal_taskId">
 
                     <input type="submit" name="deleteTask" value="Taak verwijderen" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
