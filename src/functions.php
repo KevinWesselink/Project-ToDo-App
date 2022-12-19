@@ -34,12 +34,9 @@ if (isset($_POST['completeTask'])) {
 
 if (isset($_POST['deleteTask'])) {
     global $conn;
-    $title = $_POST['title'];
-    $description = $_POST["description"];
-    $location = $_POST["location"];
-
-    $query = "DELETE FROM todoapp WHERE title = '$title' AND description = '$description' AND location = '$location'";
-    $sth = $conn->prepare($query);
+    $id = $_POST['modal_taskId'];
+    $sth = $conn->prepare("DELETE FROM todoapp WHERE id = :id");
+    $sth->bindParam(':id', $id);
     $sth->execute();
 }
 
@@ -68,7 +65,7 @@ function getTodo() {
                     <td>
                         <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1, " . $teller . ")'>
                         <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2, " . $teller . ")'>
-                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, ". $teller .")'>
+                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, ". $teller .", ". $row['id'] .")'>
                     </td>
                 </tr>";
         $teller++;
