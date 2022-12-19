@@ -56,20 +56,22 @@ function getTodo() {
     $createdOn = date("Y-m-d H:i:s");
 
     //Toon de data uit de array
+    $teller = 1;
     foreach ($result as $row) {
         echo "<tr>
                     <td>" . $row['id'] . "</td>
-                    <td>" . $row['title'] . "</td>
-                    <td>" . $row['description'] . "</td>
-                    <td>" . $row['location'] . "</td>
+                    <td><span id='title_" . $teller . "'>" . $row['title'] . "</span></td>
+                    <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
+                    <td><span id='location_" . $teller . "'>" . $row['location'] . "</span></td>
                     <td></td>
                     <td></td>
                     <td>
-                        <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1)'>
-                        <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2)'>
-                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3)'>
+                        <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1, " . $teller . ")'>
+                        <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2, " . $teller . ")'>
+                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, ". $teller .")'>
                     </td>
                 </tr>";
+        $teller++;
     }
 }
 ?>

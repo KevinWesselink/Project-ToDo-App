@@ -38,20 +38,23 @@ function closeModal(modal) {
     document.getElementById('location').value = '';
 }
 
-function modal(num){
+function modal(num,veldNr){
     if (num === 1){
         //Taak wijzigen
         //alert('Functie uitgeschakeld.');
-         openModal(document.getElementById('modal1'));
+        openModal(document.getElementById('modal1'));
     } else if (num === 2){
         //Taak afronden
         //alert('Functie uitgeschakeld.');
          openModal(document.getElementById('modal2'));
     } else if (num === 3){
         //Taak verwijderen
-        document.getElementById('title').value;
-        document.getElementById('description').value;
-        document.getElementById('location').value;
+        let title = document.getElementById('title_'+veldNr).innerHTML;
+        let description = document.getElementById('description_'+veldNr).innerHTML;
+        let location = document.getElementById('location_'+veldNr).innerHTML;
+        document.getElementById('modal_title').innerHTML = title;
+        document.getElementById('modal_description').innerHTML = description;
+        document.getElementById('modal_location').innerHTML = location;
         openModal(document.getElementById('modal3'));
     }
 }

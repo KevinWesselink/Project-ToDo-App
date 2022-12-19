@@ -113,9 +113,9 @@ include "../src/functions.php";
                 <form name="deleteData" method="post"></form>
                     <h3>Weet je zeker dat je deze taak wil verwijderen?</h3>
 
-                    <p>Titel: </p>
-                    <p>Omschrijving: </p>
-                    <p>Locatie: </p>
+                    <p>Titel: <span id="modal_title"></span> </p>
+                    <p>Omschrijving: <span id="modal_description"></span></p>
+                    <p>Locatie: <span id="modal_location"></span></p>
 
                     <input type="submit" name="deleteTask" value="Taak verwijderen" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
