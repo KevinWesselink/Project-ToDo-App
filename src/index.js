@@ -41,14 +41,17 @@ function closeModal(modal) {
 function modal(num){
     if (num === 1){
         //Taak wijzigen
-        alert('Functie uitgeschakeld.')
-        // openModal(document.getElementById('modal1'));
+        //alert('Functie uitgeschakeld.');
+         openModal(document.getElementById('modal1'));
     } else if (num === 2){
         //Taak afronden
-        alert('Functie uitgeschakeld.')
-        // openModal(document.getElementById('modal2'));
+        //alert('Functie uitgeschakeld.');
+         openModal(document.getElementById('modal2'));
     } else if (num === 3){
         //Taak verwijderen
+        document.getElementById('title').value;
+        document.getElementById('description').value;
+        document.getElementById('location').value;
         openModal(document.getElementById('modal3'));
     }
 }
