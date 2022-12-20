@@ -83,18 +83,13 @@ include "../src/functions.php";
             </div>
             <div class="modalBody">
                 <form name="insertData" method="post">
-                    <div>
-                        <label for="title">Titel</label>
-                        <input type="text" id="title" name="title" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
-                    </div>
-                    <div>
-                        <label for="description">Omschrijving</label>
-                        <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" minlength="0" maxlength="255" required>
-                    </div>
-                    <div>
-                        <label for="location">Locatie</label>
-                        <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
-                    </div>
+                    <h3>Weet je zeker dat je deze taak wil afronden?</h3>
+
+                    <p>Titel: <span id="modal_title_2"></span> </p>
+                    <p>Omschrijving: <span id="modal_description_2"></span></p>
+                    <p>Locatie: <span id="modal_location_2"></span></p>
+
+                    <input type="hidden" name="modal_taskId" id="modal_taskId_2">
 
                     <input type="submit" name="completeTask" value="Taak afronden" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
@@ -113,11 +108,11 @@ include "../src/functions.php";
                 <form name="deleteData" method="post" action="functions.php">
                     <h3>Weet je zeker dat je deze taak wil verwijderen?</h3>
 
-                    <p>Titel: <span id="modal_title"></span> </p>
-                    <p>Omschrijving: <span id="modal_description"></span></p>
-                    <p>Locatie: <span id="modal_location"></span></p>
+                    <p>Titel: <span id="modal_title_3"></span> </p>
+                    <p>Omschrijving: <span id="modal_description_3"></span></p>
+                    <p>Locatie: <span id="modal_location_3"></span></p>
 
-                    <input type="hidden" name="modal_taskId" id="modal_taskId">
+                    <input type="hidden" name="modal_taskId" id="modal_taskId_3">
 
                     <input type="submit" name="deleteTask" value="Taak verwijderen" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
