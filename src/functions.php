@@ -30,7 +30,7 @@ if (isset($_POST['editTask'])) {
 }
 
 if (isset($_POST['completeTask'])) {
-
+    //Als task wordt gecomplete, INSERT date_completed INTO date_completed
 }
 
 if (isset($_POST['deleteTask'])) {
@@ -45,7 +45,7 @@ if (isset($_POST['deleteTask'])) {
 function getTodo() {
     global $conn;
     //Data uit de database ophalen
-    $query = "SELECT id, title, description, location FROM todoapp";
+    $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp";
     $sth = $conn->prepare($query);
 
     $sth->execute();
@@ -62,8 +62,8 @@ function getTodo() {
                     <td><span id='title_" . $teller . "'>" . $row['title'] . "</span></td>
                     <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
                     <td><span id='location_" . $teller . "'>" . $row['location'] . "</span></td>
-                    <td></td>
-                    <td></td>
+                    <td>" . $row['date_created'] . "</td>
+                    <td>" . $row['date_completed'] . "</td>
                     <td>
                         <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1, " . $teller . ")'>
                         <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2, " . $teller . ")'>
