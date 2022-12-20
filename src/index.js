@@ -38,26 +38,25 @@ function closeModal(modal) {
     document.getElementById('location').value = '';
 }
 
+function prepareModal(num, veldNr, taskId) {
+    let title = document.getElementById('title_'+veldNr).innerHTML;
+    let description = document.getElementById('description_'+veldNr).innerHTML;
+    let location = document.getElementById('location_'+veldNr).innerHTML;
+
+    document.getElementById('modal_title_' + num).innerHTML = title;
+    document.getElementById('modal_description_' + num).innerHTML = description;
+    document.getElementById('modal_location_' + num).innerHTML = location;
+    document.getElementById('modal_taskId_' + num).value = taskId;
+
+    openModal(document.getElementById('modal' + num));
+}
+
 function modal(num,veldNr, taskId){
     if (num === 1){
         //Taak wijzigen
         //alert('Functie uitgeschakeld.');
-        openModal(document.getElementById('modal1'));
-    } else if (num === 2){
-        //Taak afronden
-        //alert('Functie uitgeschakeld.');
-         openModal(document.getElementById('modal2'));
-    } else if (num === 3){
-        //Taak verwijderen
-        let title = document.getElementById('title_'+veldNr).innerHTML;
-        let description = document.getElementById('description_'+veldNr).innerHTML;
-        let location = document.getElementById('location_'+veldNr).innerHTML;
-
-        document.getElementById('modal_title').innerHTML = title;
-        document.getElementById('modal_description').innerHTML = description;
-        document.getElementById('modal_location').innerHTML = location;
-        document.getElementById('modal_taskId').value = taskId;
-
-        openModal(document.getElementById('modal3'));
+        // openModal(document.getElementById('modal1'));
+    } else {
+        prepareModal(num, veldNr, taskId)
     }
 }
