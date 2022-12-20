@@ -1,4 +1,5 @@
 <?php
+include "../database/db.php";
 
 if (isset($_POST['insertTask'])) {
     $title = $_POST['title'];
@@ -33,11 +34,12 @@ if (isset($_POST['completeTask'])) {
 }
 
 if (isset($_POST['deleteTask'])) {
-    global $conn;
     $id = $_POST['modal_taskId'];
     $sth = $conn->prepare("DELETE FROM todoapp WHERE id = :id");
     $sth->bindParam(':id', $id);
     $sth->execute();
+
+    header("Location:index.php");
 }
 
 function getTodo() {
