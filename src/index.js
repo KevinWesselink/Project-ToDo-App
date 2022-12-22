@@ -54,7 +54,7 @@ function prepareModal(num, veldNr, taskId) {
 function modal(num,veldNr, taskId){
     if (num === 1){
         //Taak wijzigen
-        //alert('Functie uitgeschakeld.');
+        alert('Functie uitgeschakeld.');
         // openModal(document.getElementById('modal1'));
     } else {
         prepareModal(num, veldNr, taskId)
