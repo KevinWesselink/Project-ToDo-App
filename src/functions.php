@@ -6,9 +6,6 @@ if (isset($_POST['insertTask'])) {
     $description = $_POST["description"];
     $location = $_POST["location"];
     $createdOn = date("Y-m-d H:i:s");
-    echo $createdOn;
-
-    echo "Data array updated \n";
 
     //Check of de titel en omschrijving al bestaan
     $resultTitleDupeCheck = $conn->query("SELECT title FROM todoapp WHERE title = '$title'");
@@ -16,7 +13,7 @@ if (isset($_POST['insertTask'])) {
 
     if ($resultTitleDupeCheck->rowCount() == 0 && $resultDescriptionDupeCheck->rowCount() == 0) {
         //Data in de database stoppen
-        $query = "insert into todoapp (`title`, `description`, `location`, date_created) values (:title, :description, :location, :date_created)";
+        $query = "INSERT INTO todoapp (`title`, `description`, `location`, 'date_created') VALUES (:title, :description, :location, :date_created)";
 
         $sth = $conn->prepare($query);
         $sth->bindParam(':title', $title);
@@ -34,7 +31,15 @@ if (isset($_POST['editTask'])) {
 }
 
 if (isset($_POST['completeTask'])) {
-    //Als task wordt gecomplete, INSERT date_completed INTO date_completed
+    $id = $_POST['modal_taskId'];
+    $completedOn = date("Y-m-d H:i:s");
+
+    $sth = $conn->prepare("UPDATE todoapp SET date_completed = :completedOn, completed = 1 WHERE id = :id");
+    $sth->bindParam(':id', $id);
+    $sth->bindParam(':completedOn', $completedOn);
+    $sth->execute();
+
+    header("Location:index.php");
 }
 
 if (isset($_POST['deleteTask'])) {
@@ -68,7 +73,7 @@ function getTodo() {
                     <td>" . $row['date_completed'] . "</td>
                     <td>
                         <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1, " . $teller . ")'>
-                        <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2, " . $teller . ")'>
+                        <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2, " . $teller . ", " . $row['id'] . ")'>
                         <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, ". $teller .", ". $row['id'] .")'>
                     </td>
                 </tr>";
