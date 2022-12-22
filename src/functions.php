@@ -27,7 +27,16 @@ if (isset($_POST['insertTask'])) {
 }
 
 if (isset($_POST['editTask'])) {
+    $id = $_POST['modal_taskId'];
 
+    $sth = $conn->prepare("");
+    $sth->bindParam(':id', $id);
+    $sth->bindParam(':title', $title);
+    $sth->bindParam(':descrption', $description);
+    $sth->bindParam(':location', $location);
+    $sth->execute();
+
+    header("Location:index.php");
 }
 
 if (isset($_POST['completeTask'])) {
