@@ -72,7 +72,7 @@ function getTodo() {
                     <td>" . $row['date_created'] . "</td>
                     <td>" . $row['date_completed'] . "</td>
                     <td>
-                        <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1, " . $teller . ")'>
+                        <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1, " . $teller . ", " . $row['id'] . ")'>
                         <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2, " . $teller . ", " . $row['id'] . ")'>
                         <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, ". $teller .", ". $row['id'] .")'>
                     </td>
