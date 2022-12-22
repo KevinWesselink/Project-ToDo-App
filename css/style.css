@@ -41,8 +41,9 @@ body {
     border: 3px solid black;
 }
 
-.tableBorder.completed {
+.completed {
     color: #c0c0c0;
+    border: 3px solid black;
 }
 
 .tableHead {
