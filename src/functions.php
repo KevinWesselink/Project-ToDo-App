@@ -5,6 +5,9 @@ if (isset($_POST['insertTask'])) {
     $title = $_POST['title'];
     $description = $_POST["description"];
     $location = $_POST["location"];
+    $createdOn = date("Y-m-d H:i:s");
+    echo $createdOn;
+
     echo "Data array updated \n";
 
     //Check of de titel en omschrijving al bestaan
@@ -13,12 +16,13 @@ if (isset($_POST['insertTask'])) {
 
     if ($resultTitleDupeCheck->rowCount() == 0 && $resultDescriptionDupeCheck->rowCount() == 0) {
         //Data in de database stoppen
-        $query = "insert into todoapp (`title`, `description`, `location`) values (:title, :description, :location)";
+        $query = "insert into todoapp (`title`, `description`, `location`, date_created) values (:title, :description, :location, :date_created)";
 
         $sth = $conn->prepare($query);
         $sth->bindParam(':title', $title);
         $sth->bindParam(':description', $description);
         $sth->bindParam(':location', $location);
+        $sth->bindParam(':date_created', $createdOn);
         $sth->execute();
     } else {
         echo "Error: Deze titel of omschrijving bestaat al.";
@@ -51,8 +55,6 @@ function getTodo() {
     $sth->execute();
     //Geeft data weer in een associatieve array (data wordt niet opgehaald via indexes, maar via namen)
     $result = $sth->fetchAll(PDO::FETCH_ASSOC);
-
-    $createdOn = date("Y-m-d H:i:s");
 
     //Toon de data uit de array
     $teller = 1;
