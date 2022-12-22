@@ -73,7 +73,12 @@ function getTodo() {
     //Toon de data uit de array
     $teller = 1;
     foreach ($result as $row) {
-        echo "<tr>
+        if ($row['date_completed'] == "") {
+            $class = "tableBorder";
+        } else {
+            $class = "completed";
+        }
+        echo "<tr class='$class'>
                     <td>" . $row['id'] . "</td>
                     <td><span id='title_" . $teller . "'>" . $row['title'] . "</span></td>
                     <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
@@ -83,7 +88,7 @@ function getTodo() {
                     <td>
                         <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' onclick='modal(1, " . $teller . ", " . $row['id'] . ")'>
                         <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' onclick='modal(2, " . $teller . ", " . $row['id'] . ")'>
-                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, ". $teller .", ". $row['id'] .")'>
+                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, " . $teller . ", " . $row['id'] . ")'>
                     </td>
                 </tr>";
         $teller++;
