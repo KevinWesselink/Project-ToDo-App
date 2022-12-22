@@ -54,20 +54,9 @@ function prepareModal(num, veldNr, taskId) {
 function modal(num,veldNr, taskId){
     if (num === 1){
         //Taak wijzigen
-        if (document.getElementById('date_completed').value === "") {
-            openModal(document.getElementById('modal1'));
-        } else {
-            alert('Een afgeronde taak kan niet meer gewijzigd worden!');
-        }
-    } else if (num === 2) {
-        //Taak afronden
-        alert(document.getElementById('date_completed').value);
-        if (document.getElementById('date_completed').value === "") {
-            prepareModal(num, veldNr, taskId)
-        } else {
-            alert("Je hebt deze taak al afgerond!");
-        }
+        openModal(document.getElementById('modal1'));
     } else {
+        //Taak afronden
         //Taak verwijderen
         prepareModal(num, veldNr, taskId)
     }
