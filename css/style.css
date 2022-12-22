@@ -41,6 +41,10 @@ body {
     border: 3px solid black;
 }
 
+.tableBorder.completed {
+    color: #c0c0c0;
+}
+
 .tableHead {
     width: 100%;
 }
