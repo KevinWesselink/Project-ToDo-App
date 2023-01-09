@@ -43,6 +43,8 @@ function prepareModal(num, veldNr, taskId) {
     let description = document.getElementById('description_'+veldNr).innerHTML;
     let location = document.getElementById('location_'+veldNr).innerHTML;
 
+    alert("Modal doet het.");
+
     document.getElementById('modal_title_' + num).innerHTML = title;
     document.getElementById('modal_description_' + num).innerHTML = description;
     document.getElementById('modal_location_' + num).innerHTML = location;
@@ -52,12 +54,5 @@ function prepareModal(num, veldNr, taskId) {
 }
 
 function modal(num,veldNr, taskId){
-    if (num === 1){
-        //Taak wijzigen
-        openModal(document.getElementById('modal1'));
-    } else {
-        //Taak afronden
-        //Taak verwijderen
-        prepareModal(num, veldNr, taskId)
-    }
+    prepareModal(num, veldNr, taskId)
 }

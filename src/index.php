@@ -56,17 +56,19 @@ include "../src/functions.php";
             <div class="modalBody">
                 <form name="insertData" method="post">
                     <div>
-                        <label for="title">Titel</label>
+                        <label for="title">Titel:</label>
                         <input type="text" id="title" name="title" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
                     </div>
                     <div>
-                        <label for="description">Omschrijving</label>
+                        <label for="description">Omschrijving:</label>
                         <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" minlength="0" maxlength="255" required>
                     </div>
                     <div>
-                        <label for="location">Locatie</label>
+                        <label for="location">Locatie:</label>
                         <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
                     </div>
+
+                    <input type="hidden" name="modal_taskId" id="modal_taskId_1">
 
                     <input type="submit" name="editTask" value="Taak aanpassen" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
