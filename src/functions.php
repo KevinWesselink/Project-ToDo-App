@@ -29,7 +29,7 @@ if (isset($_POST['insertTask'])) {
 if (isset($_POST['editTask'])) {
     $id = $_POST['modal_taskId'];
 
-    $sth = $conn->prepare("");
+    $sth = $conn->prepare("UPDATE todoapp SET title = :title, description = :description, location = :location WHERE id = :id");
     $sth->bindParam(':id', $id);
     $sth->bindParam(':title', $title);
     $sth->bindParam(':descrption', $description);
