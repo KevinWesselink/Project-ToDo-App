@@ -42,9 +42,7 @@ function prepareModal(num, veldNr, taskId) {
     let title = document.getElementById('title_'+veldNr).innerHTML;
     let description = document.getElementById('description_'+veldNr).innerHTML;
     let location = document.getElementById('location_'+veldNr).innerHTML;
-
-    alert("Modal doet het.");
-
+    
     if (num === 1){
         //Taak wijzigen
         openModal(document.getElementById('modal1'));
