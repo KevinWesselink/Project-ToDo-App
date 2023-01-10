@@ -42,7 +42,7 @@ function prepareModal(num, veldNr, taskId) {
     let title = document.getElementById('title_'+veldNr).innerHTML;
     let description = document.getElementById('description_'+veldNr).innerHTML;
     let location = document.getElementById('location_'+veldNr).innerHTML;
-    
+
     if (num === 1){
         //Taak wijzigen
         openModal(document.getElementById('modal1'));
@@ -56,8 +56,4 @@ function prepareModal(num, veldNr, taskId) {
 
         openModal(document.getElementById('modal' + num));
     }
-}
-
-function modal(num,veldNr, taskId){
-    prepareModal(num, veldNr, taskId)
 }
