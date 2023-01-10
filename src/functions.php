@@ -88,15 +88,15 @@ function getTodo() {
                     <td>
                         <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' ";
                         if ($row['date_completed'] == "") {
-                            echo "onclick='modal(1, " . $teller . ", " . $row['id'] . ")'";
+                            echo "onclick='prepareModal(1, " . $teller . ", " . $row['id'] . ")'";
                         }
                         echo ">
                         <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' ";
                         if ($row['date_completed'] == "") {
-                        echo "onclick='modal(2, " . $teller . ", " . $row['id'] . ")'";
+                        echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
                         }
                         echo " >
-                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='modal(3, " . $teller . ", " . $row['id'] . ")'>
+                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='prepareModal(3, " . $teller . ", " . $row['id'] . ")'>
                     </td>
                 </tr>";
         $teller++;

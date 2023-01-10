@@ -45,12 +45,19 @@ function prepareModal(num, veldNr, taskId) {
 
     alert("Modal doet het.");
 
-    document.getElementById('modal_title_' + num).innerHTML = title;
-    document.getElementById('modal_description_' + num).innerHTML = description;
-    document.getElementById('modal_location_' + num).innerHTML = location;
-    document.getElementById('modal_taskId_' + num).value = taskId;
+    if (num === 1){
+        //Taak wijzigen
+        openModal(document.getElementById('modal1'));
+    } else {
+        //Taak afronden
+        //Taak verwijderen
+        document.getElementById('modal_title_' + num).innerHTML = title;
+        document.getElementById('modal_description_' + num).innerHTML = description;
+        document.getElementById('modal_location_' + num).innerHTML = location;
+        document.getElementById('modal_taskId_' + num).value = taskId;
 
-    openModal(document.getElementById('modal' + num));
+        openModal(document.getElementById('modal' + num));
+    }
 }
 
 function modal(num,veldNr, taskId){
