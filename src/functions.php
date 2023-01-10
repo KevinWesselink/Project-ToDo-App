@@ -79,26 +79,26 @@ function getTodo() {
             $class = "completed";
         }
         echo "<tr class='$class'>
-                    <td>" . $row['id'] . "</td>
-                    <td><span id='title_" . $teller . "'>" . $row['title'] . "</span></td>
-                    <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
-                    <td><span id='location_" . $teller . "'>" . $row['location'] . "</span></td>
-                    <td>" . $row['date_created'] . "</td>
-                    <td>" . $row['date_completed'] . "</td>
-                    <td>
-                        <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' ";
-                        if ($row['date_completed'] == "") {
-                            echo "onclick='prepareModal(1, " . $teller . ", " . $row['id'] . ")'";
-                        }
-                        echo ">
-                        <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' ";
-                        if ($row['date_completed'] == "") {
-                        echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
-                        }
-                        echo " >
-                        <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='prepareModal(3, " . $teller . ", " . $row['id'] . ")'>
-                    </td>
-                </tr>";
+                <td>" . $row['id'] . "</td>
+                <td><span id='title_" . $teller . "'>" . $row['title'] . "</span></td>
+                <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
+                <td><span id='location_" . $teller . "'>" . $row['location'] . "</span></td>
+                <td>" . $row['date_created'] . "</td>
+                <td>" . $row['date_completed'] . "</td>
+                <td>
+                    <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' ";
+                    if ($row['date_completed'] == "") {
+                        echo "onclick='prepareModal(1, " . $teller . ", " . $row['id'] . ")'";
+                    }
+                    echo ">
+                    <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' ";
+                    if ($row['date_completed'] == "") {
+                    echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
+                    }
+                    echo " >
+                    <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='prepareModal(3, " . $teller . ", " . $row['id'] . ")'>
+                </td>
+        </tr>";
         $teller++;
     }
 }
