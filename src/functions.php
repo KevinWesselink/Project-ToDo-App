@@ -60,7 +60,7 @@ if (isset($_POST['deleteTask'])) {
     header("Location:index.php");
 }
 
-function getTodo() {
+function getToDo() {
     global $conn;
     //Data uit de database ophalen
     $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp";
