@@ -57,7 +57,7 @@ include "../src/functions.php";
                 <form name="insertData" method="post">
                     <div>
                         <label for="title">Titel:</label>
-                        <input type="text" id="title" name="title" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
+                        <input type="text" id="title" name="title" placeholder="Titel:" value="<?php echo $result['title']; ?>" minlength="0" maxlength="50" required>
                     </div>
                     <div>
                         <label for="description">Omschrijving:</label>
@@ -138,7 +138,7 @@ include "../src/functions.php";
         <th>Afgerond op</th>
         <th>Acties</th>
     </tr>
-    <?php getTodo(); ?>
+    <?php getToDo(); ?>
     <!--Eerst degene die nog open staan, daarna de voltooide.-->
 </table>
 </body>
