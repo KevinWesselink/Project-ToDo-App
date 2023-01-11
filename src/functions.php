@@ -32,7 +32,7 @@ if (isset($_POST['editTask'])) {
     $sth = $conn->prepare("UPDATE todoapp SET title = :title, description = :description, location = :location WHERE id = :id");
     $sth->bindParam(':id', $id);
     $sth->bindParam(':title', $title);
-    $sth->bindParam(':descrption', $description);
+    $sth->bindParam(':description', $description);
     $sth->bindParam(':location', $location);
     $sth->execute();
 
