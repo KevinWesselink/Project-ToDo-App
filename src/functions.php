@@ -13,7 +13,7 @@ if (isset($_POST['insertTask'])) {
 
     if ($resultTitleDupeCheck->rowCount() == 0 && $resultDescriptionDupeCheck->rowCount() == 0) {
         //Data in de database stoppen
-        $query = "INSERT INTO todoapp (`title`, `description`, `location`, 'date_created') VALUES (:title, :description, :location, :date_created)";
+        $query = "INSERT INTO todoapp (`title`, `description`, `location`, `date_created`) VALUES (:title, :description, :location, :date_created)";
 
         $sth = $conn->prepare($query);
         $sth->bindParam(':title', $title);
