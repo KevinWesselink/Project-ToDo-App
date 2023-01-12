@@ -57,7 +57,7 @@ include "../src/functions.php";
                 <form name="insertData" method="post">
                     <div>
                         <label for="title1">Titel:</label>
-                        <input type="text" id="title1" name="title1" placeholder="Titel:" minlength="0" maxlength="50">
+                        <input type="text" id="title1" name="title1" placeholder="Titel:" minlength="1" maxlength="50">
                     </div>
                     <div>
                         <label for="description1">Omschrijving:</label>
@@ -65,7 +65,7 @@ include "../src/functions.php";
                     </div>
                     <div>
                         <label for="location1">Locatie:</label>
-                        <input type="text" id="location1" name="location1" placeholder="Locatie:" minlength="0" maxlength="50">
+                        <input type="text" id="location1" name="location1" placeholder="Locatie:" minlength="1" maxlength="50">
                     </div>
 
                     <input type="hidden" name="modal_taskId1" id="modal_taskId1">
