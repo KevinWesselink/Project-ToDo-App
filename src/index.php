@@ -29,15 +29,15 @@ include "../src/functions.php";
                 <form name="insertData" method="post">
                     <div>
                         <label for="title">Titel</label>
-                        <input type="text" id="title" name="title" placeholder="Titel:" value="" minlength="0" maxlength="50" required>
+                        <input type="text" id="title" name="title" placeholder="Titel:" value="" maxlength="50" required>
                     </div>
                     <div>
                         <label for="description">Omschrijving</label>
-                        <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" minlength="0" maxlength="255" required>
+                        <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" maxlength="255">
                     </div>
                     <div>
                         <label for="location">Locatie</label>
-                        <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
+                        <input type="text" id="location" name="location" placeholder="Locatie:" value="" maxlength="50" required>
                     </div>
 
                     <input type="submit" name="insertTask" value="Opslaan" class="submit">
@@ -57,15 +57,15 @@ include "../src/functions.php";
                 <form name="insertData" method="post">
                     <div>
                         <label for="title1">Titel:</label>
-                        <input type="text" id="title1" name="title1" placeholder="Titel:" minlength="1" maxlength="50">
+                        <input type="text" id="title1" name="title1" placeholder="Titel:" maxlength="50" required>
                     </div>
                     <div>
                         <label for="description1">Omschrijving:</label>
-                        <input type="text" id="description1" name="description1" placeholder="Omschrijving:" minlength="0" maxlength="255">
+                        <input type="text" id="description1" name="description1" placeholder="Omschrijving:" maxlength="255">
                     </div>
                     <div>
                         <label for="location1">Locatie:</label>
-                        <input type="text" id="location1" name="location1" placeholder="Locatie:" minlength="1" maxlength="50">
+                        <input type="text" id="location1" name="location1" placeholder="Locatie:" maxlength="50" required>
                     </div>
 
                     <input type="hidden" name="modal_taskId1" id="modal_taskId1">
