@@ -90,12 +90,12 @@ function getToDo() {
                 <td>" . $row['date_completed'] . "</td>
                 <td>
                     <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' ";
-                    if ($row['completed'] == 1) {
+                    if ($row['date_completed'] == "") {
                         echo "onclick='prepareModal(1, " . $teller . ", " . $row['id'] . ")'";
                     }
                     echo ">
                     <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' ";
-                    if ($row['completed'] == 1) {
+                    if ($row['date_completed'] == "") {
                     echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
                     }
                     echo " >
