@@ -46,6 +46,10 @@ function prepareModal(num, veldNr, taskId) {
     if (num === 1){
         //Taak wijzigen
         openModal(document.getElementById('modal1'));
+        document.getElementById('title1').value = title;
+        document.getElementById('description1').value = description;
+        document.getElementById('location1').value = location;
+        document.getElementById('modal_taskId1').value = taskId;
     } else {
         //Taak afronden
         //Taak verwijderen
