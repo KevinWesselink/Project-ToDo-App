@@ -56,19 +56,19 @@ include "../src/functions.php";
             <div class="modalBody">
                 <form name="insertData" method="post">
                     <div>
-                        <label for="title">Titel:</label>
-                        <input type="text" id="title" name="title" placeholder="Titel:" value="<span id='modal_title_1'></span>" minlength="0" maxlength="50">
+                        <label for="title1">Titel:</label>
+                        <input type="text" id="title1" name="title1" placeholder="Titel:" minlength="0" maxlength="50">
                     </div>
                     <div>
-                        <label for="description">Omschrijving:</label>
-                        <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" minlength="0" maxlength="255">
+                        <label for="description1">Omschrijving:</label>
+                        <input type="text" id="description1" name="description1" placeholder="Omschrijving:" minlength="0" maxlength="255">
                     </div>
                     <div>
-                        <label for="location">Locatie:</label>
-                        <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50">
+                        <label for="location1">Locatie:</label>
+                        <input type="text" id="location1" name="location1" placeholder="Locatie:" minlength="0" maxlength="50">
                     </div>
 
-                    <input type="hidden" name="modal_taskId" id="modal_taskId_1">
+                    <input type="hidden" name="modal_taskId1" id="modal_taskId1">
 
                     <input type="submit" name="editTask" value="Taak aanpassen" class="submit">
                     <button data-close-button class="cancel">Annuleren</button>
@@ -144,6 +144,6 @@ include "../src/functions.php";
 </body>
 
 
-<script src="index.js"></script>
+<script src="index.js?v=0.005"></script>
 
 </html>
