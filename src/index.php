@@ -9,7 +9,7 @@ include "../src/functions.php";
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../css/style.css?=v120120231335">
+    <link rel="stylesheet" href="../css/style.css?=v120120231642">
     <title>To Do App</title>
 </head>
 <body>
@@ -128,19 +128,20 @@ include "../src/functions.php";
 <div class="myTasksDiv">
     Mijn taken
 </div>
-<table class="tableHead">
-    <tr class="tableBorder">
-        <th>#</th>
-        <th>Titel</th>
-        <th>Omschrijving</th>
-        <th>Locatie</th>
-        <th>Aangemaakt op</th>
-        <th>Afgerond op</th>
-        <th>Acties</th>
-    </tr>
-    <?php getToDo(); ?>
-    <?php getCompleted(); ?>
-</table>
+<div class="table">
+    <table class="tableHead">
+        <tr class="tableBorder">
+            <th>#</th>
+            <th>Titel</th>
+            <th>Omschrijving</th>
+            <th>Locatie</th>
+            <th>Aangemaakt op</th>
+            <th>Afgerond op</th>
+            <th>Acties</th>
+        </tr>
+        <?php getToDo(); ?>
+    </table>
+</div>
 </body>
 
 
