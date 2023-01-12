@@ -57,7 +57,7 @@ include "../src/functions.php";
                 <form name="insertData" method="post">
                     <div>
                         <label for="title">Titel:</label>
-                        <input type="text" id="title" name="title" placeholder="Titel:" value="<?php echo $result['title']; ?>" minlength="0" maxlength="50">
+                        <input type="text" id="title" name="title" placeholder="Titel:" value="<span id='modal_title_1'></span>" minlength="0" maxlength="50">
                     </div>
                     <div>
                         <label for="description">Omschrijving:</label>
@@ -87,7 +87,7 @@ include "../src/functions.php";
                 <form name="insertData" method="post">
                     <h3>Weet je zeker dat je deze taak wil afronden?</h3>
 
-                    <p>Titel: <span id="modal_title_2"></span> </p>
+                    <p>Titel: <span id="modal_title_2"></span></p>
                     <p>Omschrijving: <span id="modal_description_2"></span></p>
                     <p>Locatie: <span id="modal_location_2"></span></p>
 
@@ -110,7 +110,7 @@ include "../src/functions.php";
                 <form name="deleteData" method="post" action="functions.php">
                     <h3>Weet je zeker dat je deze taak wil verwijderen?</h3>
 
-                    <p>Titel: <span id="modal_title_3"></span> </p>
+                    <p>Titel: <span id="modal_title_3"></span></p>
                     <p>Omschrijving: <span id="modal_description_3"></span></p>
                     <p>Locatie: <span id="modal_location_3"></span></p>
 
