@@ -57,15 +57,15 @@ include "../src/functions.php";
                 <form name="insertData" method="post">
                     <div>
                         <label for="title">Titel:</label>
-                        <input type="text" id="title" name="title" placeholder="Titel:" value="<?php echo $result['title']; ?>" minlength="0" maxlength="50" required>
+                        <input type="text" id="title" name="title" placeholder="Titel:" value="<?php echo $result['title']; ?>" minlength="0" maxlength="50">
                     </div>
                     <div>
                         <label for="description">Omschrijving:</label>
-                        <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" minlength="0" maxlength="255" required>
+                        <input type="text" id="description" name="description" placeholder="Omschrijving:" value="" minlength="0" maxlength="255">
                     </div>
                     <div>
                         <label for="location">Locatie:</label>
-                        <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50" required>
+                        <input type="text" id="location" name="location" placeholder="Locatie:" value="" minlength="0" maxlength="50">
                     </div>
 
                     <input type="hidden" name="modal_taskId" id="modal_taskId_1">
