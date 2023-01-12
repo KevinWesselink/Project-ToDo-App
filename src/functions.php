@@ -66,7 +66,7 @@ if (isset($_POST['deleteTask'])) {
 function getToDo() {
     global $conn;
     //Data uit de database ophalen
-    $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp";
+    $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NULL";
     $sth = $conn->prepare($query);
 
     $sth->execute();
@@ -76,12 +76,7 @@ function getToDo() {
     //Toon de data uit de array
     $teller = 1;
     foreach ($result as $row) {
-        if ($row['date_completed'] == "") {
-            $class = "tableBorder";
-        } else {
-            $class = "completed";
-        }
-        echo "<tr class='$class'>
+        echo "<tr class='tableBorder'>
                 <td>" . $row['id'] . "</td>
                 <td><span id='title_" . $teller . "'>" . $row['title'] . "</span></td>
                 <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
@@ -99,6 +94,44 @@ function getToDo() {
                     echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
                     }
                     echo " >
+                    <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='prepareModal(3, " . $teller . ", " . $row['id'] . ")'>
+                </td>
+        </tr>";
+        $teller++;
+    }
+}
+
+function getCompleted() {
+    global $conn;
+    //Data uit de database ophalen
+    $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NOT NULL";
+    $sth = $conn->prepare($query);
+
+    $sth->execute();
+    //Geeft data weer in een associatieve array (data wordt niet opgehaald via indexes, maar via namen)
+    $result = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+    //Toon de data uit de array
+    $teller = 1;
+    foreach ($result as $row) {
+        echo "<tr class='completed'>
+                <td>" . $row['id'] . "</td>
+                <td><span id='title_" . $teller . "'>" . $row['title'] . "</span></td>
+                <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
+                <td><span id='location_" . $teller . "'>" . $row['location'] . "</span></td>
+                <td>" . $row['date_created'] . "</td>
+                <td>" . $row['date_completed'] . "</td>
+                <td>
+                    <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' ";
+        if ($row['date_completed'] == "") {
+            echo "onclick='prepareModal(1, " . $teller . ", " . $row['id'] . ")'";
+        }
+        echo ">
+                    <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' ";
+        if ($row['date_completed'] == "") {
+            echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
+        }
+        echo " >
                     <input type='image' src='../images/Prullenbak.jpg' alt='' value='delete' name='prullenbak' class='icons' onclick='prepareModal(3, " . $teller . ", " . $row['id'] . ")'>
                 </td>
         </tr>";
