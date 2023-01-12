@@ -155,3 +155,7 @@ td {
     height: 20px;
     margin-right: 5px;
 }
+
+p, label, input {
+    margin: 1px;
+}
