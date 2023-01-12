@@ -139,7 +139,7 @@ include "../src/functions.php";
         <th>Acties</th>
     </tr>
     <?php getToDo(); ?>
-    <!--Eerst degene die nog open staan, daarna de voltooide.-->
+    <?php getCompleted(); ?>
 </table>
 </body>
 
