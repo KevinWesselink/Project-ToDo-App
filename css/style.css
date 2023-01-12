@@ -41,6 +41,10 @@ body {
     border: 3px solid black;
 }
 
+.table {
+    overflow-x: auto;
+}
+
 .completed {
     color: #c0c0c0;
     border: 3px solid black;
