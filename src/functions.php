@@ -63,17 +63,19 @@ if (isset($_POST['deleteTask'])) {
     header("Location:index.php");
 }
 
-function getToDo($completed) {
+function getTasks() {
     global $conn;
+    $completed = "SELECT completed FROM todoapp";
+    $sth = $conn->prepare($completed);
+    $sth->execute();
     if ($completed == 0) {
-        //query = datecompleted is null
-        //$class = tableBorder;
+        $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NULL";
+        $class = "tableBorder";
     } else {
-        //query = datecompleted is not null
-        //$class = completed;
+        $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NOT NULL";
+        $class = "completed";
     }
     //Data uit de database ophalen
-    $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NULL";
     $sth = $conn->prepare($query);
 
     $sth->execute();
