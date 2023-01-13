@@ -5,7 +5,7 @@ if (isset($_POST['insertTask'])) {
     $title = $_POST['title'];
     $description = $_POST["description"];
     $location = $_POST["location"];
-    $createdOn = date("Y-m-d H:i:s");
+    $createdOn = date("H:i:s d-m-Y");
 
     //Check of de titel en omschrijving al bestaan
     $resultTitleDupeCheck = $conn->query("SELECT title FROM todoapp WHERE title = '$title'");
@@ -44,7 +44,7 @@ if (isset($_POST['editTask'])) {
 
 if (isset($_POST['completeTask'])) {
     $id = $_POST['modal_taskId'];
-    $completedOn = date("Y-m-d H:i:s");
+    $completedOn = date("H:i:s d-m-Y");
 
     $sth = $conn->prepare("UPDATE todoapp SET date_completed = :completedOn, completed = 1 WHERE id = :id");
     $sth->bindParam(':id', $id);
