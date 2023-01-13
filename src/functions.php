@@ -63,15 +63,18 @@ if (isset($_POST['deleteTask'])) {
     header("Location:index.php");
 }
 
-function getTasks() {
+function getTasks($completed) {
     global $conn;
-    $completed = "SELECT completed FROM todoapp";
-    $sth = $conn->prepare($completed);
-    $sth->execute();
+    $teller = 1;
     if ($completed == 0) {
         $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NULL";
         $class = "tableBorder";
     } else {
+        $countNotCompletedTasks = "SELECT count(*) AS amount FROM todoapp  WHERE date_completed IS NULL";
+        $sth = $conn->prepare($countNotCompletedTasks);
+        $sth->execute();
+        $amount = $sth->fetch(PDO::FETCH_ASSOC);
+        $teller =  $amount['amount'] + 1;
         $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NOT NULL";
         $class = "completed";
     }
@@ -83,7 +86,6 @@ function getTasks() {
     $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
     //Toon de data uit de array
-    $teller = 1;
     foreach ($result as $row) {
         echo "<tr class='$class'>
                 <td>" . $row['id'] . "</td>
@@ -91,14 +93,19 @@ function getTasks() {
                 <td><span id='description_" . $teller . "'>" . $row['description'] . "</span></td>
                 <td><span id='location_" . $teller . "'>" . $row['location'] . "</span></td>
                 <td>" . $row['date_created'] . "</td>
-                <td>" . $row['date_completed'] . "</td>
-                <td>
-                    <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='icons' ";
+                <td>" . $row['date_completed'] . "</td> ";
+                 if ($row['date_completed'] == ""){
+                     $class = "icons";
+                 } else {
+                     $class = "completedIcons";
+                 }
+                echo "<td>
+                    <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='$class' ";
                     if ($row['date_completed'] == "") {
                         echo "onclick='prepareModal(1, " . $teller . ", " . $row['id'] . ")'";
                     }
                     echo ">
-                    <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='icons' ";
+                    <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='$class' ";
                     if ($row['date_completed'] == "") {
                     echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
                     }
