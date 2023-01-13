@@ -160,6 +160,13 @@ td {
     margin-right: 5px;
 }
 
+.completedIcons {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    opacity: 50%;
+}
+
 p, label, input {
     margin: 1px;
 }
