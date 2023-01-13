@@ -139,7 +139,8 @@ include "../src/functions.php";
             <th>Afgerond op</th>
             <th>Acties</th>
         </tr>
-        <?php getTasks(); ?>
+        <?php getTasks(0); ?>
+        <?php getTasks(1); ?>
     </table>
 </div>
 </body>
