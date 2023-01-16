@@ -67,7 +67,7 @@ function getTasks($completed) {
     global $conn;
     $teller = 1;
     if ($completed == 0) {
-        $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NULL";
+        $query = "SELECT id, title, description, location, DATE_FORMAT(date_created, '%d-%m-%Y %H:%i:%s') as date_created, DATE_FORMAT(date_completed, '%d-%m-%Y %H:%i:%s') as date_completed FROM todoapp  WHERE date_completed IS NULL";
         $class = "tableBorder";
     } else {
         $countNotCompletedTasks = "SELECT count(*) AS amount FROM todoapp  WHERE date_completed IS NULL";
@@ -75,7 +75,7 @@ function getTasks($completed) {
         $sth->execute();
         $amount = $sth->fetch(PDO::FETCH_ASSOC);
         $teller =  $amount['amount'] + 1;
-        $query = "SELECT id, title, description, location, date_created, date_completed FROM todoapp  WHERE date_completed IS NOT NULL";
+        $query = "SELECT id, title, description, location, DATE_FORMAT(date_created, '%d-%m-%Y %H:%i:%s') as date_created, DATE_FORMAT(date_completed, '%d-%m-%Y %H:%i:%s') as date_completed FROM todoapp  WHERE date_completed IS NOT NULL";
         $class = "completed";
     }
     //Data uit de database ophalen
