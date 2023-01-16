@@ -95,17 +95,17 @@ function getTasks($completed) {
                 <td>" . $row['date_created'] . "</td>
                 <td>" . $row['date_completed'] . "</td> ";
                  if ($row['date_completed'] == ""){
-                     $class = "icons";
+                     $completedClass = "icons";
                  } else {
-                     $class = "completedIcons";
+                     $completedClass = "completedIcons";
                  }
                 echo "<td>
-                    <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='$class' ";
+                    <input type='image' src='../images/BalPen.jpg' alt='' value='edit' name='balpen' class='$completedClass' ";
                     if ($row['date_completed'] == "") {
                         echo "onclick='prepareModal(1, " . $teller . ", " . $row['id'] . ")'";
                     }
                     echo ">
-                    <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='$class' ";
+                    <input type='image' src='../images/Vinkje.jpg' alt='' value='complete' name='vinkje' class='$completedClass' ";
                     if ($row['date_completed'] == "") {
                     echo "onclick='prepareModal(2, " . $teller . ", " . $row['id'] . ")'";
                     }
